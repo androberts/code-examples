@@ -40,15 +40,14 @@ class List {
         if (!this.head) {
             return;
         }
-        let prev = this.head;
-        let current = this.head.next;
+        let prev = null;
+        let current = this.head;
         while (current) {
             let nextToVisit = current.next;
             current.next = prev;
             prev = current;
             current = nextToVisit;
         }
-        this.head.next = null;
         this.head = prev;
     }
 }
